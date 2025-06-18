@@ -1,0 +1,128 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f4f4f4;
+            min-height: 2000px; /* For scroll demo */
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #222;
+            color: #fff;
+            z-index: 1000;
+            transition: background 0.3s, box-shadow 0.3s;
+            box-shadow: none;
+        }
+        nav.scrolled {
+            background: #fff;
+            color: #222;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            height: 64px;
+            justify-content: space-between;
+        }
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 32px;
+        }
+        nav ul li a {
+            color: inherit;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background 0.2s, color 0.2s;
+        }
+        nav ul li a:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+        nav.scrolled ul li a:hover {
+            background: #222;
+            color: #fff;
+        }
+        /* Responsive menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: currentColor;
+            border-radius: 2px;
+            transition: background 0.2s;
+        }
+        @media (max-width: 768px) {
+            nav .container {
+                flex-direction: row;
+            }
+            nav ul {
+                position: absolute;
+                top: 64px;
+                left: 0;
+                width: 100%;
+                background: inherit;
+                flex-direction: column;
+                gap: 0;
+                display: none;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            nav ul li {
+                border-bottom: 1px solid #eee;
+            }
+            .menu-toggle {
+                display: flex;
+            }
+        }
+        .hero {
+            margin-top: 80px;
+            text-align: center;
+            padding: 80px 20px 40px 20px;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .hero button {
+            background: transparent;
+            color: #000000;          
+            border: 2px solid #000000;
+            padding: 0.75rem 2rem;
+            border-radius: 2rem;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s, color 0.3s;
+        }
+        .hero button:hover {
+            background: #000000;
+            color: #ffffff;
+        }
